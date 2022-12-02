@@ -13,10 +13,7 @@ This code is Golang equivalent of the Python Code
 var round_score = map[string]int {"win": 6, "draw": 3}
 var played_score = map[string]int {"rock": 1, "paper": 2, "scissors": 3}
 var winning_rounds = map[string]string {"rock": "paper", "paper": "scissors", "scissors": "rock"} // #Opponent hand is key and my hand is value
-var abc_convert = map[string]string {"A": "rock", "B": "paper", "C": "scissors"} 
-var my_score int
-var opponent string
-var me string
+var abc_convert = map[string]string {"A": "rock", "B": "paper", "C": "scissors"}
 
 func main(){
 	my_final_score := 0
@@ -42,6 +39,7 @@ func main(){
 }
 
 func part1(opponent string, me string, round_score map[string]int, winning_rounds map[string]string, played_score map[string]int) int {
+	var my_score int
 	xyz_convert := map[string]string {"X": "rock", "Y": "paper", "Z": "scissors"} 
 	//fmt.Println(opponent, " ", xyz_convert[me])
 	if xyz_convert[me] == winning_rounds[opponent] {
@@ -56,6 +54,7 @@ func part1(opponent string, me string, round_score map[string]int, winning_round
 }
 
 func part2(opponent string, me string, round_score map[string]int, winning_rounds map[string]string, played_score map[string]int) int {
+	var my_score int
 	xyz_convert := map[string]string {"X": "lose", "Y": "draw", "Z": "win"}
 	if xyz_convert[me] == "win" {
 		my_score = played_score[winning_rounds[opponent]]+round_score["win"]

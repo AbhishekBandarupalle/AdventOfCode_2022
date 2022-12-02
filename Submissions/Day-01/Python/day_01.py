@@ -15,4 +15,5 @@ def elf_calories(inputfile):
             else:
                 calories+=int(line)
                 elf_calories.append(calories)
+    input_data.close()
     return elf_calories
